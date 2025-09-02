@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizMaster Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Tailwind via CDN  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- font-awesome via cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Start Quiz Page -->
+  <section
+    class="bg-white min-h-screen w-full bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-50 flex items-center justify-center p-6">
+    <div
+      class="justify-center relative w-full max-w-3xl rounded-3xl bg-white/80 backdrop-blur-xl shadow-lg p-6 md:p-10">
+
+      <!-- Brain Icon -->
+      <div class="space-x-5 text-3xl text-indigo-600 flex justify-center">
+        <i class="fa-solid fa-brain text-5xl"></i>
+      </div>
+
+      <!-- Heading -->
+      <div class="max-w-2xl mx-auto mb-12 pt-5">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center">
+          <span class="bg-gradient-to-r from-indigo-600 to-fuchsia-600 bg-clip-text text-transparent">
+            QuizMaster Pro
+          </span>
+        </h2>
+        <p class="mt-4 text-md text-gray-600">
+          Test your knowledge with our premium quiz experience. Challenge yourself with timed questions and track your
+          progress.
+        </p>
+      </div>
+
+      <!-- features -->
+      <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- feature 1 -->
+        <div class="rounded-2xl bg-slate-50 p-5 shadow-sm">
+          <div class="space-x-5 text-3xl text-indigo-600 flex justify-center">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3 class="mt-4 text-lg font-bold text-gray-900 text-center">Timed Questions</h3>
+          <p class="text-gray-600 text-md text-center">60 second per question</p>
+        </div>
+
+        <!-- feature 2 -->
+        <div class="rounded-2xl bg-slate-50 p-5 shadow-sm">
+          <div class="space-x-5 text-3xl text-indigo-600 flex justify-center">
+            <i class="fa-solid fa-chart-column"></i>
+          </div>
+          <h3 class="mt-4 text-lg font-bold text-gray-900 text-center">Track Progress</h3>
+          <p class="text-gray-600 text-md text-center">See your result</p>
+        </div>
+
+        <!-- feature 3 -->
+        <div class="rounded-2xl bg-slate-50 p-5 shadow-sm">
+          <div class="space-x-5 text-3xl text-indigo-600 flex justify-center">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h3 class="mt-4 text-lg font-bold text-gray-900 text-center">Responsive</h3>
+          <p class="text-gray-600 text-md text-center">On only device</p>
+        </div>
+
+      </div>
+
+      <!-- start button -->
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-5">
+        <button
+          class="px-8 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-fuchsia-600 shadow-lg justify-center">
+          Start Quiz
+        </button>
+      </div>
+
+      <!-- Dark Mode -->
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-5">
+        <div class="flex items-center gap-3 select-none">
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" class="hidden peer">
+            <div class="relative h-7 w-12 rounded-full bg-slate-200 peer-checked:bg-slate-800 transition-all">
+              <span class="absolute top-1 left-1 h-5 w-5 rounded-full bg-blue-600 shadow transition-transform"></span>
+            </div>
+          </label>
+          <span class="text-slate-700">Dark Mode</span>
+        </div>
+
+      </div>
+  </section>
+  <!-- Start Quiz Page -->
+
+  <script src="app.js"></script>
+</body>
+
+</html>
