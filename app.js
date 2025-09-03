@@ -101,3 +101,151 @@ const num3 = 90;
 // }
 // totalNum([1, 3, 2, 5, 3, 5])
 
+// and ma sb conditions true
+// or ma sirf 1 condition true
+
+// Sum of First N Natural Numbers
+// N input lo aur 1 se N tak numbers ka sum print karo.
+// User se prompt lo k koi b number Daly user jse wo 10 Daly to
+// Apko ASA program bana na he k user ne Jo b number dala ho AP 1 se lekr us number tk sum kroge
+
+// let num = Number(prompt("enter any number"))
+// sum = 0;
+// for(i=1; i <= num; i++ ){
+//     sum += i;
+//     console.log(i)
+// }
+// console.log(`sum of first ${num} and natural number is ${sum}`)
+
+
+// Count vowels 
+// Ek string input lo aur count karo vowels (a, e, i, o, u) kitni hain.
+// User se prompt lo k wo koi word type kre phr wo jo word type kren usme se count kro kitni vowels he
+
+// let word = prompt("Enter any word");
+// word = word.toLowerCase();
+// let vowel= "aeiou";
+
+// let count = 0;
+// for (let i = 0; i < word.length; i++){
+//     if(vowel.includes(word[i])){
+// count++;
+//     }
+// }
+// console.log(`The ${word} has ${count} vowels`);
+
+// let myName = "Maham";
+// let see = myName.includes("h");
+// console.log(see)
+const questionsArr = [
+    {
+        question: "what is html",
+        options: ["scripting language", "server side language", "english language", "markup language"],
+        correctAns: 3
+    },
+    {
+        question: "what does CSS stand for?",
+        options: ["Cascading Style Sheets", "Creative Style System", "Computer Style Syntax", "Colorful Style Sheets"],
+        correctAns: 0
+    },
+    {
+        question: "which is used to create a hyperlink in html?",
+        options: ["anchor", "link", "hyper", "connect"],
+        correctAns: 0
+    },
+    {
+        question: "which property is used in CSS to change text color?",
+        options: ["background color", "font color", "color", "text color"],
+        correctAns: 2
+    },
+    {
+        question: "which symbol is used for single line comments in JavaScript?",
+        options: ["double slash", "hash", "slash star", "percent"],
+        correctAns: 0
+    },
+    {
+        question: "which method is used to print something in the console in JavaScript?",
+        options: ["print", "console log", "log console", "echo"],
+        correctAns: 1
+    },
+    {
+        question: "which is used to display an image in html?",
+        options: ["img", "picture", "photo", "graphic"],
+        correctAns: 0
+    },
+    {
+        question: "in CSS, which property controls the size of text?",
+        options: ["font style", "text size", "font size", "size"],
+        correctAns: 2
+    },
+    {
+        question: "which company developed JavaScript?",
+        options: ["Microsoft", "Netscape", "Google", "Oracle"],
+        correctAns: 1
+    },
+    {
+        question: "which attribute in HTML is used to provide alternative text for an image?",
+        options: ["title", "alt", "src", "name"],
+        correctAns: 1
+    },
+    {
+        question: "which of the following is NOT a programming language?",
+        options: ["Python", "Java", "HTML", "C++"],
+        correctAns: 2
+    }
+];
+
+let startBtn = document.getElementById("startBtn"); 
+let prevBtn = document.getElementById("prevBtn"); 
+let nextBtn = document.getElementById("nextBtn"); 
+let startScreen = document.getElementById("startScreen");
+let quesPage = document.getElementById("quesPage");
+let resultPage = document.getElementById("resultPage");
+let currQues = document.getElementById("currQues");
+let totalQues = document.getElementById("totalQues");
+let quesNum = document.getElementById("quesNum");
+let ques = document.getElementById("ques");
+let optionList = document.getElementById("optionList");
+let totalQuestions = questionsArr.length;
+let currentQuestionIdx = 0;
+let order = ["A","B","C","D"]
+let start = ()=>{
+startScreen.classList.add("hidden");
+quesPage.classList.remove("hidden");
+totalQues.innerHTML = totalQuestions;
+loadQues();
+}
+
+let loadQues = ()=>{
+const currQuestion = questionsArr[currentQuestionIdx];
+ques.innerHTML= currQuestion.question;
+currQues.innerHTML = currentQuestionIdx +1;
+quesNum.innerHTML = currentQuestionIdx +1;
+optionList.innerHTML ="";
+currQuestion.options.forEach((opt,idx)=>{
+    optionList.innerHTML+=`
+     <li class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
+    <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs font-semibold">${order[idx]}</span>
+    <span class="text-gray-500 text-sm">${opt}</span>
+  </li>
+    `
+})
+}
+
+const nextQuestion = ()=>{
+    console.log(currentQuestionIdx);
+currentQuestionIdx++;
+
+loadQues()
+}
+
+const prevQuestion = () =>{
+    console.log(currentQuestionIdx);
+
+currentQuestionIdx--;
+loadQues()
+}
+startBtn.addEventListener("click",start)
+prevBtn.addEventListener("click",prevQuestion)
+nextBtn.addEventListener("click",nextQuestion)
+console.log(quesPage)

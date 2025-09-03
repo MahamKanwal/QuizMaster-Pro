@@ -15,13 +15,12 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="min-h-screen w-full bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-50 flex items-center
+     justify-center p-6 ">
+
   <!-- Start Quiz Page -->
-  <section
-    class="bg-white min-h-screen w-full bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-50 flex items-center
-     justify-center p-6 hidden">
-    <div
-      class="justify-center relative w-full max-w-3xl rounded-3xl bg-white/80 backdrop-blur-xl shadow-lg p-6 md:p-10">
+    <div id="startScreen"
+      class="justify-center relative w-full max-w-3xl rounded-3xl bg-white backdrop-blur-xl shadow-lg p-6 md:p-10">
 
       <!-- Brain Icon -->
       <div class="space-x-5 text-3xl text-indigo-600 flex justify-center">
@@ -74,7 +73,7 @@
 
       <!-- start button -->
       <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-5">
-        <button
+        <button id="startBtn"
           class="px-8 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-fuchsia-600 shadow-lg justify-center">
           Start Quiz
         </button>
@@ -91,18 +90,19 @@
           </label>
           <span class="text-slate-700">Dark Mode</span>
         </div>
-
       </div>
-  </section>
+    </div>
   <!-- Start Quiz Page -->
 
 <!-- Quiz Question Page -->
-  <section class="min-h-screen flex items-center justify-center p-6">
-  <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg">
+  <div class="w-full max-w-3xl rounded-2xl shadow-lg hidden" id="quesPage">
 
     <!-- Header -->
     <div class="flex justify-between items-center mb-4 bg-blue-600 rounded-t-xl rounded-b-none px-4 py-4">
-      <p class="text-sm font-medium text-white">Question 1/5</p>
+      <p class="text-sm font-medium text-white">Questions
+        <span id="currQues">1</span>/
+        <span id="totalQues">5</span>
+      </p>
       <span class="flex items-center text-red-500 text-sm font-semibold">
         <i class="fa-solid fa-clock"></i>60s
       </span> 
@@ -118,50 +118,27 @@
     <!-- Question -->
      <div class="p-6 pt-0">
     <p class="mt-4 text-md text-gray-600 text-xs">
-     Question 1:
+     Question <span id="quesNum">1</span>:
         </p>
-    <h2 class="text-xl font-semibold mb-4"> What is the capital of France?</h2>
-   <!-- Options -->
-   <div class="space-y-3">
-      <label class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
-        <input type="radio" name="answer" class="hidden peer">
-        <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs fomt-semibold peer-checked:bg-blue-500 peer-checked:text-white">A</span>
-        <span class="text-gray-500 text-sm">London</span>
-      </label>
+    <h2 class="text-xl font-semibold mb-4" id="ques"> What is the capital of France?</h2>
+ <!-- Options -->
+<ul class="space-y-3" id="optionList">
 
-      <label class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
-        <input type="radio" name="answer" class="hidden peer">
-        <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs font-semibold peer-checked:bg-blue-500 peer-checked:text-white">B</span>
-        <span class="text-gray-500 text-sm">Berlin</span>
-      </label>
+</ul>
 
-      <label class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
-        <input type="radio" name="answer" class="hidden peer">
-        <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs font-semibold peer-checked:bg-blue-500 peer-checked:text-white">C</span>
-        <span class="text-gray-500 text-sm">Paris</span>
-      </label>
-
-      <label class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
-        <input type="radio" name="answer" class="hidden peer">
-        <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs font-semibold peer-checked:bg-blue-500 peer-checked:text-white">D</span>
-        <span class="text-gray-500 text-sm">Madrid</span>
-      </label>
-    </div>
 
     <!-- Buttons -->
     <div class="mt-6 flex justify-between">
-      <button class="px-6 py-2 rounded-full border text-blue-600 border-blue-300 hover:bg-blue-50">Previous</button>
-      <button class="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700">Next</button>
+      <button class="px-6 py-2 rounded-full border text-blue-600 border-blue-300 hover:bg-blue-50" id="prevBtn">Previous</button>
+      <button class="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700" id="nextBtn">Next</button>
     </div>
   </div>
 
   </div>
-</section>
 <!-- Quiz Question Page -->
 
 <!-- Quiz Result Page -->
-<section class="min-h-screen flex items-center justify-center p-6 hidden">
-  <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg">
+  <div class="w-full max-w-3xl  rounded-2xl shadow-lg hidden" id="resultPage">
 
     <!-- Header -->
     <div class="flex justify-between items-center mb-4 bg-blue-600 rounded-t-xl rounded-b-none px-4 py-4">
@@ -177,7 +154,7 @@
 </div>
 
   <!-- Questions List -->
-    <div class="space-y-4 px-6 pb-6 p-6 pt-0">
+    <div class="space-y-4 p-6 pt-0">
       
       <!-- Question 1 -->
       <div class="border-l-4 border-red-500 bg-gray-50 p-4 rounded-l-xl shadow-sm">
@@ -218,9 +195,9 @@
     </div>
   </div>
 
-</section>
 <!-- Quiz Result Page -->
 
   <script src="app.js"></script>
 </body>
 </html>
+
