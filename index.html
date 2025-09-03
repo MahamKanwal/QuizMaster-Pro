@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QuizMaster Pro</title>
+  <link rel="shortcut icon" href="images/quizicon.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <!-- Tailwind via CDN  -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +18,8 @@
 <body>
   <!-- Start Quiz Page -->
   <section
-    class="bg-white min-h-screen w-full bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-50 flex items-center justify-center p-6">
+    class="bg-white min-h-screen w-full bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-50 flex items-center
+     justify-center p-6 hidden">
     <div
       class="justify-center relative w-full max-w-3xl rounded-3xl bg-white/80 backdrop-blur-xl shadow-lg p-6 md:p-10">
 
@@ -33,7 +35,7 @@
             QuizMaster Pro
           </span>
         </h2>
-        <p class="mt-4 text-md text-gray-600">
+        <p class="mt-4 text-md text-gray-600 text-center">
           Test your knowledge with our premium quiz experience. Challenge yourself with timed questions and track your
           progress.
         </p>
@@ -42,7 +44,7 @@
       <!-- features -->
       <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
         <!-- feature 1 -->
-        <div class="rounded-2xl bg-slate-50 p-5 shadow-sm">
+        <div class="rounded-2xl bg-slate-100 p-5 shadow-sm">
           <div class="space-x-5 text-3xl text-indigo-600 flex justify-center">
             <i class="fa-solid fa-clock"></i>
           </div>
@@ -51,7 +53,7 @@
         </div>
 
         <!-- feature 2 -->
-        <div class="rounded-2xl bg-slate-50 p-5 shadow-sm">
+        <div class="rounded-2xl bg-slate-100 p-5 shadow-sm">
           <div class="space-x-5 text-3xl text-indigo-600 flex justify-center">
             <i class="fa-solid fa-chart-column"></i>
           </div>
@@ -60,7 +62,7 @@
         </div>
 
         <!-- feature 3 -->
-        <div class="rounded-2xl bg-slate-50 p-5 shadow-sm">
+        <div class="rounded-2xl bg-slate-100 p-5 shadow-sm">
           <div class="space-x-5 text-3xl text-indigo-600 flex justify-center">
             <i class="fa-solid fa-mobile-screen-button"></i>
           </div>
@@ -94,7 +96,131 @@
   </section>
   <!-- Start Quiz Page -->
 
+<!-- Quiz Question Page -->
+  <section class="min-h-screen flex items-center justify-center p-6">
+  <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-4 bg-blue-600 rounded-t-xl rounded-b-none px-4 py-4">
+      <p class="text-sm font-medium text-white">Question 1/5</p>
+      <span class="flex items-center text-red-500 text-sm font-semibold">
+        <i class="fa-solid fa-clock"></i>60s
+      </span> 
+</div>
+
+<!-- Progress Bar -->
+<div class="px-6 mb-3">
+  <div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full w-1/5"></div>
+  </div>
+</div>
+
+    <!-- Question -->
+     <div class="p-6 pt-0">
+    <p class="mt-4 text-md text-gray-600 text-xs">
+     Question 1:
+        </p>
+    <h2 class="text-xl font-semibold mb-4"> What is the capital of France?</h2>
+   <!-- Options -->
+   <div class="space-y-3">
+      <label class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
+        <input type="radio" name="answer" class="hidden peer">
+        <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs fomt-semibold peer-checked:bg-blue-500 peer-checked:text-white">A</span>
+        <span class="text-gray-500 text-sm">London</span>
+      </label>
+
+      <label class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
+        <input type="radio" name="answer" class="hidden peer">
+        <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs font-semibold peer-checked:bg-blue-500 peer-checked:text-white">B</span>
+        <span class="text-gray-500 text-sm">Berlin</span>
+      </label>
+
+      <label class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
+        <input type="radio" name="answer" class="hidden peer">
+        <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs font-semibold peer-checked:bg-blue-500 peer-checked:text-white">C</span>
+        <span class="text-gray-500 text-sm">Paris</span>
+      </label>
+
+      <label class="flex items-center p-3 border rounded-xl cursor-pointer bg-gray-50">
+        <input type="radio" name="answer" class="hidden peer">
+        <span class="mr-3 flex items-center justify-center w-6 h-6 border rounded-full text-xs font-semibold peer-checked:bg-blue-500 peer-checked:text-white">D</span>
+        <span class="text-gray-500 text-sm">Madrid</span>
+      </label>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-6 flex justify-between">
+      <button class="px-6 py-2 rounded-full border text-blue-600 border-blue-300 hover:bg-blue-50">Previous</button>
+      <button class="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700">Next</button>
+    </div>
+  </div>
+
+  </div>
+</section>
+<!-- Quiz Question Page -->
+
+<!-- Quiz Result Page -->
+<section class="min-h-screen flex items-center justify-center p-6 hidden">
+  <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-4 bg-blue-600 rounded-t-xl rounded-b-none px-4 py-4">
+      <p class="text-lg font-bold text-white">Quiz Results</p>
+</div>
+
+<!-- Score-->
+<div class="px-6 mb-3">
+<h3 class="mt-4 text-lg font-thin text-center ">
+     Your Score
+</h3>
+    <p class="bg-gradient-to-r from-indigo-600 to-fuchsia-600 bg-clip-text text-transparent text-center text-4xl font-bold">0/5</p>
+</div>
+
+  <!-- Questions List -->
+    <div class="space-y-4 px-6 pb-6 p-6 pt-0">
+      
+      <!-- Question 1 -->
+      <div class="border-l-4 border-red-500 bg-gray-50 p-4 rounded-l-xl shadow-sm">
+        <p class="font-thin text-gray-800">Q1: What is the capital of France?</p>
+        <p class="text-sm text-gray-600">Your answer: <span class="text-red-500 font-thin">Not answered</span></p>
+        <p class="text-sm text-gray-600">Correct answer: <span class="text-blue-500 font-thin">Paris</span></p>
+      </div>   
+     <!-- Question 2 -->
+    <div class="border-l-4 border-red-500 bg-gray-50 p-4 rounded-l-xl shadow-sm">
+        <p class="font-thin text-gray-800">Q2: Which planet is known as red planet?</p>
+        <p class="text-sm text-gray-600">Your answer: <span class="text-red-500 font-thin">Not answered</span></p>
+        <p class="text-sm text-gray-600">Correct answer: <span class="text-blue-500 font-thin">Mars</span></p>
+      </div>   
+       <!-- Question 3 -->
+    <div class="border-l-4 border-red-500 bg-gray-50 p-4 rounded-l-xl shadow-sm">
+        <p class="font-thin text-gray-800">Q3: What is the largest mammal planet in the world?</p>
+        <p class="text-sm text-gray-600">Your answer: <span class="text-red-500 font-thin">Not answered</span></p>
+        <p class="text-sm text-gray-600">Correct answer: <span class="text-blue-500 font-thin">Blue Whale</span></p>
+      </div>   
+        <!-- Question 4-->
+    <div class="border-l-4 border-red-500 bg-gray-50 p-4 rounded-l-xl shadow-sm">
+        <p class="font-thin text-gray-800">Q4: Which element has the chemical s"ymbol 'O'?</p>
+        <p class="text-sm text-gray-600">Your answer: <span class="text-red-500 font-thin">Not answered</span></p>
+        <p class="text-sm text-gray-600">Correct answer: <span class="text-blue-500 font-thin">Oxygen</span></p>
+      </div> 
+       <!-- Question 5-->
+    <div class="border-l-4 border-red-500 bg-gray-50 p-4 rounded-l-xl shadow-sm">
+        <p class="font-thin text-gray-800">Q5: Who painted the Mona Lisa?</p>
+        <p class="text-sm text-gray-600">Your answer: <span class="text-red-500 font-thin">Not answered</span></p>
+        <p class="text-sm text-gray-600">Correct answer: <span class="text-blue-500 font-thin">Leonardo da Vind</span></p>
+      </div>   
+    
+    </div>
+
+    <!--Try Button -->
+    <div class="pb-6 text-center">
+      <button class="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700">Try Again</button>
+    </div>
+  </div>
+
+</section>
+<!-- Quiz Result Page -->
+
   <script src="app.js"></script>
 </body>
-
 </html>
