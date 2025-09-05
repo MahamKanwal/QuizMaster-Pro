@@ -151,33 +151,18 @@
 <h3 class="mt-4 text-lg font-thin text-center ">
      Your Score
 </h3>
-    <p class="bg-gradient-to-r from-indigo-600 to-fuchsia-600 bg-clip-text text-transparent text-center text-4xl font-bold" id="score">
+<p class="bg-gradient-to-r from-indigo-600 to-fuchsia-600 bg-clip-text text-transparent text-center text-4xl font-bold" id="score">
       0/5</p>
 </div>
 
   <!-- Questions List -->
-    <div class="space-y-4 p-6 pt-0" id="quesList">
+    <div class="space-y-4 p-6 pt-0 max-h-[500px] overflow-auto" id="quesList">
       
-<ul class="bg-gray-50 rounded-xl p-4 border-l-4 border-red-500 shadow-sm space-y-2">
-  <li class="text-sm font-semibold text-gray-800">
-    Q1: What is the capital of France?
-  </li>
-  <li class="text-sm">
-    <span class="font-thin text-red-500">Your answer:</span>
-    <span class="text-gray-400">Not answered</span>
-  </li>
-  <li class="text-sm">
-    <span class="font-thin text-green-600">Correct answer:</span>
-    <span class="text-cyan-600">Paris</span>
-  </li>
-</ul>
-
-
     </div>
 
     <!--Try Button -->
     <div class="pb-6 text-center">
-      <button class="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700" id="tryAgain">Try Again</button>
+      <button class="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700" id="tryAgain" onclick="tryBtnFunc()">Try Again</button>
     </div>
   </div>
 

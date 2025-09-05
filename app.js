@@ -136,7 +136,25 @@ const num3 = 90;
 
 // let myName = "Maham";
 // let see = myName.includes("h");
-// console.log(see)
+// console.log(see);
+
+// Remove Duplicates from Array Sawal: Ek array hai [1,2,2,3,4,4,5] → output asy ana chaiye [1,2,3,4,5].
+
+// let numArr =  [1,2,2,3,4,4,5];
+// let newArr2 = [];
+// for(let n of numArr){
+//     if(!newArr2.includes(n)){
+//      newArr2.push(n)
+//     }
+// }
+// console.log(newArr2);
+
+// Count Words in String Sawal: Ek sentence input lo "I love JavaScript" → count karo kitne words hain
+
+// let words = "I love JavaScript";
+// let countWords = words.trim().split(" ").length;
+// console.log(countWords);
+
 const questionsArr = [
     {
         question: "what is html",
@@ -251,8 +269,6 @@ let loadQues = () => {
     })
 }
 
-// totoal question 5
-// currectindex 0 se 0 to 4
 const nextQuestion = () => {
     if (currentQuestionIdx < totalQuestions - 1) {
         currentQuestionIdx++;
@@ -278,6 +294,7 @@ const prevQuestion = () => {
 
 let submitQuiz = ()=>{
 let score = 0;
+quesList.innerHTML =  " ";
     quesPage.classList.add("hidden");
     resultPage.classList.remove("hidden");
  questionsArr.forEach((q,idx)=>{
@@ -286,11 +303,35 @@ let score = 0;
     score++;
 };
 scoreElm.innerHTML = `${score}/${totalQuestions}`
+quesList.innerHTML += `<div class="max-w-xl mx-auto bg-white shadow-lg rounded-2xl p-6 mb-4 border border-gray-200">
+  <p class="text-lg font-semibold text-gray-800 mb-2">
+    Q. ${ idx + 1 } ${ q.question }
+  </p>
 
+  <p class="text-gray-700">
+    <span class="font-medium text-blue-600">Your Answer:</span> 
+    ${ q.options[userAnswer[idx]] ?? "Not Answered"}
+  </p>
+
+  <p class="text-gray-700 mt-1">
+    <span class="font-medium text-green-600">Correct Answer:</span> 
+    ${ q.options[q.correctAns] }
+  </p>
+</div>
+`
 })
-
 }
 
+let tryBtnFunc = ()=>{
+resultPage.classList.add("hidden");
+startScreen.classList.remove("hidden");
+currentQuestionIdx = 0;
+userAnswer = Array(totalQuestions).fill(null);
+ nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+}
+
+tryAgain.addEventListener("click",tryBtnFunc)
 submitBtn.addEventListener("click", submitQuiz)
 startBtn.addEventListener("click", start)
 prevBtn.addEventListener("click", prevQuestion)
