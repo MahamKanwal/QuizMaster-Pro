@@ -155,6 +155,19 @@ const num3 = 90;
 // let countWords = words.trim().split(" ").length;
 // console.log(countWords);
 
+// let count = 100;
+
+// const fun = ( ) => {
+// count--;
+// console.log(count);
+// if(count == 50){
+//     clearInterval(num);
+// }
+// }
+
+// let num = setInterval(fun,100);
+
+
 const questionsArr = [
     {
         question: "what is html",
@@ -231,7 +244,12 @@ let optionList = document.getElementById("optionList");
 let scoreElm = document.getElementById("score");
 let quesList = document.getElementById("quesList");
 let tryAgain = document.getElementById("tryAgain");
+let timerElm = document.getElementById("timer");
+let quesTimers = Array(totalQuestions).fill(60);
+let expiredQues = Array(totalQuestions).fill(false);
 let currentQuestionIdx = 0;
+let timer ;
+let timeLeft ;
 let order = ["A", "B", "C", "D"];
 let start = () => {
     startScreen.classList.add("hidden");
@@ -266,8 +284,54 @@ let loadQues = () => {
     <span class="text-gray-500 text-sm">${opt}</span>
   </li>
     `
+    // timeLeft = quesTimers[currentQuestionIdx];
+    if(!expiredQues[currentQuestionIdx]){
+        startTime();
+    }
+    else{
+        timerElm.innerHTML = "Time Over";
+    }
     })
 }
+
+let startTime = () => {
+ clearInterval(timer);
+  if(expiredQues[currentQuestionIdx]){
+ timerElm.innerHTML = "Time Over";
+ return;
+  }   
+ timeLeft = quesTimers[currentQuestionIdx];
+ timerElm.innerHTML = timeLeft;
+timer = setInterval(() => {
+  timeLeft--;
+  quesTimers[currentQuestionIdx] = timeLeft;
+  timerElm.innerHTML = timeLeft;
+  if(timeLeft == 0){
+clearInterval(timer);
+expiredQues[currentQuestionIdx] = true;
+timerElm.innerHTML = "Time Over";
+  }
+},1000)
+}
+
+// const startTimer = () => {
+//   clearInterval(timer);
+//   timeLeft = questionTimers[currentQuestionIndex];
+//   timeElement.textContent = ${timeLeft}s;
+//   timer = setInterval(timerInterval, 1000);
+// };
+
+// const timerInterval = () => {
+//   timeLeft--;
+//   questionTimers[currentQuestionIndex] = timeLeft;
+//   timeElement.textContent = ${timeLeft}s;
+
+//   if (timeLeft <= 0) {
+//     clearInterval(timer);
+//     expiredQuestions[currentQuestionIndex] = true;
+//     timeElement.textContent = "⏳ Time Over";
+//   }
+// };
 
 const nextQuestion = () => {
     if (currentQuestionIdx < totalQuestions - 1) {
@@ -322,6 +386,7 @@ quesList.innerHTML += `<div class="max-w-xl mx-auto bg-white shadow-lg rounded-2
 })
 }
 
+
 let tryBtnFunc = ()=>{
 resultPage.classList.add("hidden");
 startScreen.classList.remove("hidden");
@@ -331,11 +396,10 @@ userAnswer = Array(totalQuestions).fill(null);
  submitBtn.classList.add("hidden");
 }
 
-tryAgain.addEventListener("click",tryBtnFunc)
-submitBtn.addEventListener("click", submitQuiz)
-startBtn.addEventListener("click", start)
-prevBtn.addEventListener("click", prevQuestion)
-nextBtn.addEventListener("click", nextQuestion)
-
+tryAgain.addEventListener("click",tryBtnFunc);
+submitBtn.addEventListener("click", submitQuiz);
+startBtn.addEventListener("click", start);
+prevBtn.addEventListener("click", prevQuestion);
+nextBtn.addEventListener("click", nextQuestion);
 
 
