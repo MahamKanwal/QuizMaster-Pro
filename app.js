@@ -232,7 +232,7 @@ let scoreElm = document.getElementById("score");
 let quesList = document.getElementById("quesList");
 let tryAgain = document.getElementById("tryAgain");
 let currentQuestionIdx = 0;
-let order = ["A", "B", "C", "D"]
+let order = ["A", "B", "C", "D"];
 let start = () => {
     startScreen.classList.add("hidden");
     quesPage.classList.remove("hidden");
@@ -252,7 +252,7 @@ selectedLi.classList.add("border-blue-600")
 }
 
 let loadQues = () => {
-    let per = ((currentQuestionIdx + 1) / totalQuestions )* 100 + "%"
+    let per = ((currentQuestionIdx + 1) / totalQuestions )* 100 + "%";
     progressBar.style.width = per;
         const currQuestion = questionsArr[currentQuestionIdx];
     ques.innerHTML = currQuestion.question;
@@ -328,7 +328,7 @@ startScreen.classList.remove("hidden");
 currentQuestionIdx = 0;
 userAnswer = Array(totalQuestions).fill(null);
  nextBtn.classList.remove("hidden");
-        submitBtn.classList.add("hidden");
+ submitBtn.classList.add("hidden");
 }
 
 tryAgain.addEventListener("click",tryBtnFunc)
@@ -336,4 +336,6 @@ submitBtn.addEventListener("click", submitQuiz)
 startBtn.addEventListener("click", start)
 prevBtn.addEventListener("click", prevQuestion)
 nextBtn.addEventListener("click", nextQuestion)
+
+
 
