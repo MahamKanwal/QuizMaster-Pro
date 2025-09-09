@@ -164,8 +164,27 @@
 // }
 // let num = setInterval(fun,100);
 
-// PRACTICE OF JS
+// let startTime = () => {
+//  clearInterval(timer);
+//   if(expiredQues[currentQuestionIdx]){
+//  timerElm.innerHTML = "Time Over";
+//  return;
+//   }   
+//  timeLeft = quesTimers[currentQuestionIdx];
+//  timerElm.innerHTML = timeLeft;
+// timer = setInterval(() => {
+//   timeLeft--;
+//   quesTimers[currentQuestionIdx] = timeLeft;
+//   timerElm.innerHTML = timeLeft;
+//   if(timeLeft == 0){
+// clearInterval(timer);
+// expiredQues[currentQuestionIdx] = true;
+// timerElm.innerHTML = "Time Over";
+//   }
+// },1000)
+// }
 
+// PRACTICE OF JS
 
 const questionsArr = [
     {
@@ -214,15 +233,10 @@ const questionsArr = [
         correctAns: 1
     },
     {
-        question: "which attribute in HTML is used to provide alternative text for an image?",
-        options: ["title", "alt", "src", "name"],
-        correctAns: 1
-    },
-    // {
-    //     question: "which of the following is NOT a programming language?",
-    //     options: ["Python", "Java", "HTML", "C++"],
-    //     correctAns: 2
-    // }
+        question: "which of the following is NOT a programming language?",
+        options: ["Python", "Java", "HTML", "C++"],
+        correctAns: 2
+    }
 ];
 
 let startBtn = document.getElementById("startBtn");
@@ -292,26 +306,6 @@ let loadQues = () => {
     }
     })
 }
-
-// let startTime = () => {
-//  clearInterval(timer);
-//   if(expiredQues[currentQuestionIdx]){
-//  timerElm.innerHTML = "Time Over";
-//  return;
-//   }   
-//  timeLeft = quesTimers[currentQuestionIdx];
-//  timerElm.innerHTML = timeLeft;
-// timer = setInterval(() => {
-//   timeLeft--;
-//   quesTimers[currentQuestionIdx] = timeLeft;
-//   timerElm.innerHTML = timeLeft;
-//   if(timeLeft == 0){
-// clearInterval(timer);
-// expiredQues[currentQuestionIdx] = true;
-// timerElm.innerHTML = "Time Over";
-//   }
-// },1000)
-// }
 
 let startTime = () => {
   clearInterval(timer);
