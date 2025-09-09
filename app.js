@@ -188,36 +188,36 @@ const questionsArr = [
         options: ["background color", "font color", "color", "text color"],
         correctAns: 2
     },
-    // {
-    //     question: "which symbol is used for single line comments in JavaScript?",
-    //     options: ["double slash", "hash", "slash star", "percent"],
-    //     correctAns: 0
-    // },
-    // {
-    //     question: "which method is used to print something in the console in JavaScript?",
-    //     options: ["print", "console log", "log console", "echo"],
-    //     correctAns: 1
-    // },
-    // {
-    //     question: "which is used to display an image in html?",
-    //     options: ["img", "picture", "photo", "graphic"],
-    //     correctAns: 0
-    // },
-    // {
-    //     question: "in CSS, which property controls the size of text?",
-    //     options: ["font style", "text size", "font size", "size"],
-    //     correctAns: 2
-    // },
-    // {
-    //     question: "which company developed JavaScript?",
-    //     options: ["Microsoft", "Netscape", "Google", "Oracle"],
-    //     correctAns: 1
-    // },
-    // {
-    //     question: "which attribute in HTML is used to provide alternative text for an image?",
-    //     options: ["title", "alt", "src", "name"],
-    //     correctAns: 1
-    // },
+    {
+        question: "which symbol is used for single line comments in JavaScript?",
+        options: ["double slash", "hash", "slash star", "percent"],
+        correctAns: 0
+    },
+    {
+        question: "which method is used to print something in the console in JavaScript?",
+        options: ["print", "console log", "log console", "echo"],
+        correctAns: 1
+    },
+    {
+        question: "which is used to display an image in html?",
+        options: ["img", "picture", "photo", "graphic"],
+        correctAns: 0
+    },
+    {
+        question: "in CSS, which property controls the size of text?",
+        options: ["font style", "text size", "font size", "size"],
+        correctAns: 2
+    },
+    {
+        question: "which company developed JavaScript?",
+        options: ["Microsoft", "Netscape", "Google", "Oracle"],
+        correctAns: 1
+    },
+    {
+        question: "which attribute in HTML is used to provide alternative text for an image?",
+        options: ["title", "alt", "src", "name"],
+        correctAns: 1
+    },
     // {
     //     question: "which of the following is NOT a programming language?",
     //     options: ["Python", "Java", "HTML", "C++"],
@@ -293,44 +293,44 @@ let loadQues = () => {
     })
 }
 
+// let startTime = () => {
+//  clearInterval(timer);
+//   if(expiredQues[currentQuestionIdx]){
+//  timerElm.innerHTML = "Time Over";
+//  return;
+//   }   
+//  timeLeft = quesTimers[currentQuestionIdx];
+//  timerElm.innerHTML = timeLeft;
+// timer = setInterval(() => {
+//   timeLeft--;
+//   quesTimers[currentQuestionIdx] = timeLeft;
+//   timerElm.innerHTML = timeLeft;
+//   if(timeLeft == 0){
+// clearInterval(timer);
+// expiredQues[currentQuestionIdx] = true;
+// timerElm.innerHTML = "Time Over";
+//   }
+// },1000)
+// }
+
 let startTime = () => {
- clearInterval(timer);
-  if(expiredQues[currentQuestionIdx]){
- timerElm.innerHTML = "Time Over";
- return;
-  }   
- timeLeft = quesTimers[currentQuestionIdx];
- timerElm.innerHTML = timeLeft;
-timer = setInterval(() => {
+  clearInterval(timer);
+  timeLeft = quesTimers[currentQuestionIdx];
+  timerElm.innerHTML = `${timeLeft}s`;
+  timer = setInterval(timerInterval, 1000);
+};
+
+ let timerInterval = () => {
   timeLeft--;
   quesTimers[currentQuestionIdx] = timeLeft;
-  timerElm.innerHTML = timeLeft;
-  if(timeLeft == 0){
-clearInterval(timer);
-expiredQues[currentQuestionIdx] = true;
-timerElm.innerHTML = "Time Over";
-  }
-},1000)
-}
+  timerElm.innerHTML = `${timeLeft}s`;
 
-// const startTimer = () => {
-//   clearInterval(timer);
-//   timeLeft = questionTimers[currentQuestionIndex];
-//   timeElement.textContent = ${timeLeft}s;
-//   timer = setInterval(timerInterval, 1000);
-// };
-
-// const timerInterval = () => {
-//   timeLeft--;
-//   questionTimers[currentQuestionIndex] = timeLeft;
-//   timeElement.textContent = ${timeLeft}s;
-
-//   if (timeLeft <= 0) {
-//     clearInterval(timer);
-//     expiredQuestions[currentQuestionIndex] = true;
-//     timeElement.textContent = "⏳ Time Over";
-//   }
-// };
+  if (timeLeft == 0) {
+    clearInterval(timer);
+    expiredQues[currentQuestionIdx] = true;
+    timerElm.innerHTML = "⏳ Time Over";
+  }
+};
 
 const nextQuestion = () => {
     if (currentQuestionIdx < totalQuestions - 1) {
