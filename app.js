@@ -1,3 +1,4 @@
+// PRACTICE OF JS
 
 // let computerGuess = Math.floor(Math.random() * 10);
 // console.log(computerGuess);
@@ -41,9 +42,9 @@
 //     console.log("Fail");
 // }
 
-const num1 = 10;
-const num2 = 40;
-const num3 = 90;
+// const num1 = 10;
+// const num2 = 40;
+// const num3 = 90;
 // if(num1 < num2 && num1 < num3){
 //     console.log("num1 is smallest num2 and num 3")
 // }
@@ -90,7 +91,6 @@ const num3 = 90;
 // }
 // }
 
-
 // findGreatest([1, 3, 2, 5, 3, 5])
 // const totalNum = (numbers) =>{
 //      let total = 0;
@@ -116,7 +116,6 @@ const num3 = 90;
 //     console.log(i)
 // }
 // console.log(`sum of first ${num} and natural number is ${sum}`)
-
 
 // Count vowels 
 // Ek string input lo aur count karo vowels (a, e, i, o, u) kitni hain.
@@ -156,7 +155,6 @@ const num3 = 90;
 // console.log(countWords);
 
 // let count = 100;
-
 // const fun = ( ) => {
 // count--;
 // console.log(count);
@@ -164,8 +162,9 @@ const num3 = 90;
 //     clearInterval(num);
 // }
 // }
-
 // let num = setInterval(fun,100);
+
+// PRACTICE OF JS
 
 
 const questionsArr = [
@@ -385,7 +384,6 @@ quesList.innerHTML += `<div class="max-w-xl mx-auto bg-white shadow-lg rounded-2
 `
 })
 }
-
 
 let tryBtnFunc = ()=>{
 resultPage.classList.add("hidden");
