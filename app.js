@@ -272,6 +272,12 @@ let start = () => {
 }
 
 let selectAns = (index) =>{
+
+    if(expiredQues[currentQuestionIdx]){
+  alert("This question is time over!");
+  return;
+    }
+
 userAnswer[currentQuestionIdx] = index;
 const selectedLi = optionList.children[index];
 for(let li of optionList.children){
@@ -297,17 +303,16 @@ let loadQues = () => {
     <span class="text-gray-500 text-sm">${opt}</span>
   </li>
     `
-    // timeLeft = quesTimers[currentQuestionIdx];
-    if(!expiredQues[currentQuestionIdx]){
-        startTime();
-    }
-    else{
-        timerElm.innerHTML = "Time Over";
-    }
+    
+if(!expiredQues[currentQuestionIdx]){
+    startTime();
+}
+
     })
 }
 
 let startTime = () => {
+
   clearInterval(timer);
   timeLeft = quesTimers[currentQuestionIdx];
   timerElm.innerHTML = `${timeLeft}s`;
@@ -315,8 +320,7 @@ let startTime = () => {
 };
 
  let timerInterval = () => {
-  timeLeft--;
-  quesTimers[currentQuestionIdx] = timeLeft;
+  quesTimers[currentQuestionIdx] = --timeLeft;
   timerElm.innerHTML = `${timeLeft}s`;
 
   if (timeLeft == 0) {
@@ -327,6 +331,7 @@ let startTime = () => {
 };
 
 const nextQuestion = () => {
+
     if (currentQuestionIdx < totalQuestions - 1) {
         currentQuestionIdx++;
         loadQues();
